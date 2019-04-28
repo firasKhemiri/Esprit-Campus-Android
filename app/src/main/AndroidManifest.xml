@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.firas.internfiretest">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:largeHeap="true"
+        android:theme="@style/AppTheme2">
+
+
+        <activity android:name=".Accueil.AccueilActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+
+            </intent-filter>
+        </activity>
+
+
+
+        <service android:name=".FirebaseIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <service android:name=".MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
+
+
+
+        <activity android:name=".LoginActivity" />
+
+        <activity android:name=".Profile.ProfileViewPager" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".Profile.UpdateProfile" />
+        <activity android:name=".OtherUser.UserViewPager" />
+        <activity android:name=".Messages.MainConversationsActivity" />
+        <activity
+            android:name=".Messages.MainMessagesActivity"
+            android:windowSoftInputMode="adjustPan|adjustResize" />
+
+        <activity android:name=".Search.SearchViewPager" />
+        <activity android:name=".Categories.CategoryPostsViewPager" />
+        <activity android:name=".Tools.Feed.SingleImage" />
+        <activity android:name=".Tools.AddData.AddStuffMain" />
+        <activity android:name=".School.AllStudentsViewPager" />
+        <activity android:name=".School.AllProfsViewPager" />
+        <activity android:name=".Tools.Lists.Departments" />
+        <activity android:name=".Notifications.NotificationsViewPager" />
+
+        <activity android:name=".School.JoinRequest.JoinRequest" />
+
+        <activity android:name=".Notifications.Notifs.CreateNotif" />
+        <activity android:name=".School.SchoolMainPager" />
+        <activity android:name=".Tools.AddData.UpdatePhotoActual" />
+        <activity android:name=".Tools.AddData.UpdateEventActual" />
+        <activity android:name=".Tools.AddData.AddCours" />
+
+        <activity android:name=".Categories.CategoriesViewPager" />
+
+        <activity android:name=".Tools.UpdateData.UpdatePhoto" />
+        <activity android:name=".Tools.Events.MainSingleEventActivity" />
+        <activity android:name=".Tools.Events.MainParticipants" />
+
+        <activity android:name=".School.Documnts.DocumentsViewPager" />
+        <activity android:name=".Signup.SignupActivity" />
+
+        <activity android:name=".Signup.SignupActivity2" />
+
+        <activity android:name=".Signup.SignupActivity3" />
+
+        <activity android:name=".Search.Users.SearchFollowers" />
+
+
+        <activity android:name=".School.Department.DepartmentViewPager" />
+
+
+
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+
+        <activity android:name="com.facebook.FacebookActivity"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:configChanges= "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name"
+
+            tools:replace="android:theme"
+            android:theme="@style/AppTheme2"/>
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+    </application>
+
+
+
+</manifest>

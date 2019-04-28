@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00ffffff"
+    android:id="@+id/layyo"
+    android:visibility="visible">
+
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/materialup.appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        >
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/main.collapsing"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll"
+            android:layout_marginBottom="-8dp"
+            >
+
+            <ImageView
+                android:id="@+id/photocouv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                app:layout_collapseMode="parallax"
+
+                android:src="@drawable/london_flat"
+                android:visibility="visible"/>
+
+            <TextView
+                android:id="@+id/userbio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                android:text=""
+                android:textColor="#ffffff"
+                android:layout_gravity="center"
+                android:textStyle="normal|bold|italic"
+                android:textSize="27sp"
+                app:layout_collapseMode="parallax"/>
+
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/materialup.toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:background="#00000000"
+                app:layout_scrollFlags="scroll|enterAlways|snap" />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/photoprof"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_marginTop="-94dp"
+            android:layout_marginBottom="5dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/user_avatar"
+            android:elevation="8dp"
+            app:border_width="2dp"
+            app:border_color="#FFF"
+            app:layout_scrollFlags="scroll"
+            android:visibility="visible"
+            android:background="#00ffffff"/>
+
+
+        <LinearLayout
+            android:id="@+id/materialup.title_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_scrollFlags="scroll|enterAlways|snap"
+            android:background="#00ffffff">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/MyActionBarWhite">
+
+
+
+                <TextView
+                    android:id="@+id/username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/icon_dark"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                    android:text="Firas Khemir"
+                    android:gravity="center"
+                    android:layout_centerInParent="true"
+                    android:background="#00ffffff"
+                    android:layout_marginTop="2dp"/>
+
+
+                <Button
+                    android:id="@+id/join"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="Joindre"
+                    android:background="#00ffffff"
+                    android:textColor="@color/icon_dark"
+
+                    android:adjustViewBounds="true"
+                    android:cropToPadding="true"
+                    android:scaleType="fitStart"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="10dp"
+
+                    android:layout_alignRight="@+id/username"
+
+                    style="@style/Widget.AppCompat.Button.Borderless" />
+
+                <Button
+                    android:id="@+id/delete_request"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="Annuler"
+
+                    android:adjustViewBounds="true"
+                    android:cropToPadding="true"
+                    android:scaleType="fitStart"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="10dp"
+
+                    android:background="#00ffffff"
+                    android:textColor="@color/icon_dark"
+
+
+                    android:layout_alignRight="@+id/username"
+
+                    style="@style/Widget.AppCompat.Button.Borderless" />
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/MyActionBarWhite" >
+
+                <Spinner
+                    android:id="@+id/spinner1"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:spinnerMode="dropdown"
+                    android:visibility="invisible"
+                    android:layout_marginTop="-10dp"
+
+                    android:textColor="#ffffff"
+                    style="@style/AppTheme2"
+
+                    android:background="#00ffffff"/>
+
+
+                <ImageButton
+                    android:id="@+id/settings"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+
+                    android:layout_alignParentTop="true"
+
+                    android:layout_gravity="center_vertical"
+
+                    android:layout_marginEnd="35dp"
+                    android:layout_toStartOf="@+id/message"
+                    android:adjustViewBounds="true"
+                    android:background="#00000000"
+                    android:layout_marginTop="2dp"
+                    android:cropToPadding="true"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/details_school"
+                    android:tint="@color/icon_dark" />
+
+
+                <ImageButton
+                    android:id="@+id/message"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+
+                    android:layout_alignParentTop="true"
+
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_vertical"
+                    android:adjustViewBounds="true"
+                    android:background="#00000000"
+                    android:cropToPadding="true"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/chat"
+                    android:tint="@color/icon_dark" />
+
+
+                <ImageButton
+                    android:id="@+id/more"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="33dp"
+                    android:layout_toEndOf="@+id/message"
+                    android:adjustViewBounds="true"
+                    android:background="#00000000"
+                    android:cropToPadding="true"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/more"
+                    android:tint="@color/icon_dark" />
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/matabs"
+            android:layout_width="fill_parent"
+            android:background="#00ffffff"
+            android:layout_height="40dp"
+            app:tabSelectedTextColor="@color/primary"
+            app:tabIndicatorColor="@color/primaryAccent"
+            app:tabTextColor="@color/primary"
+            app:tabIndicatorHeight="4dp"
+            android:elevation="2dp"
+            app:trackTint ="#fff"
+
+        android:theme="@style/MyActionBarWhite" />
+    </android.support.design.widget.AppBarLayout>
+
+    <!-- The top margin value equals half height of the blue box -->
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+</android.support.design.widget.CoordinatorLayout>

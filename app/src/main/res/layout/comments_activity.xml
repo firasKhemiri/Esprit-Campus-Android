@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@android:color/transparent"
+    android:padding="7dp">
+
+    <FrameLayout
+
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/dialog_frag_shape"
+        android:padding="5dp"
+
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp">
+
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:minWidth="400dp"
+            android:minHeight="550dp">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="20"
+                android:padding="2dp">
+
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_view_comments"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:listitem="@layout/comment_item" />
+
+                <ProgressBar
+                    android:id="@+id/progress_bar_comments"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"/>
+
+            </RelativeLayout>
+
+
+
+
+            <include
+                layout="@layout/type_comment_area"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+
+                />
+
+        </LinearLayout>
+
+
+
+    </FrameLayout>
+
+
+</LinearLayout>

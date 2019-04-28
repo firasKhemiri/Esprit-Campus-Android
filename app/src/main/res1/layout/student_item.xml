@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="80dp"
+android:background="@color/cardview_light_background"
+android:id="@+id/layoutt">
+
+<de.hdodenhof.circleimageview.CircleImageView
+    android:layout_marginLeft="5dp"
+    android:layout_width="65dp"
+    android:layout_height="65dp"
+    android:layout_marginTop="8dp"
+    android:src="@drawable/placeholder"
+    android:id="@+id/con_image"
+    />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="kllkkl "
+            android:layout_marginLeft="10dp"
+            android:textSize="17dp"
+            android:textColor="#000"
+            android:layout_centerInParent="true"
+            android:id="@+id/stu_name" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="kllkkl "
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="55dp"
+            android:textSize="12sp"
+            android:textColor="#7b7b7b"
+            android:id="@+id/stu_classe" />
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,53 @@
+<RelativeLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/dialog_frag_shape" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/dialog_frag_shape">
+
+
+        <NumberPicker
+            android:id="@+id/numberPicker1"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="24dp" />
+
+        <TextView
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button1"
+            android:layout_centerHorizontal="true"
+
+            android:layout_marginBottom="20dp"
+            android:text="Pas de limite de participants"
+            android:textColor="@color/primaryAccent"
+            android:textSize="16sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="15dp"
+            android:layout_below="@+id/numberPicker1"
+            android:layout_centerHorizontal="true"
+            android:text="Valider"
+            android:textColor="@color/primaryAccent"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    </RelativeLayout>

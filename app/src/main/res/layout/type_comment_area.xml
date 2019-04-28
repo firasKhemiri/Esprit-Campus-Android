@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    android:orientation="horizontal">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/message_recc"
+        android:layout_marginBottom="6dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginStart="4dp">
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxHeight="150dp"
+            android:layout_weight="1"
+            android:textColorHint="#767676"
+            android:textColor="#000000"
+            android:hint="Ecrire un message"
+            android:text=""
+            android:id="@+id/type_cmt"
+            android:layout_marginEnd="50dp"
+            android:layout_marginStart="25dp"
+            android:background="@android:color/transparent"
+            android:textSize="18sp"
+            android:layout_marginTop="9dp"
+            android:layout_marginBottom="9dp"/>
+
+        <ImageView
+            android:layout_alignParentEnd="true"
+            android:layout_width="35dp"
+            android:layout_height="40dp"
+            android:paddingTop="2dp"
+            android:src="@android:drawable/ic_menu_send"
+            android:id="@+id/send"
+            android:layout_marginEnd="5dp"
+            android:layout_marginTop="3dp"
+
+            android:layout_centerInParent="true"
+            />
+    </RelativeLayout>
+</LinearLayout>

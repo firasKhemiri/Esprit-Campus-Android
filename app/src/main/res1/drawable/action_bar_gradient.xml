@@ -1,0 +1,6 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:centerColor="@color/action_bar_center"
+        android:endColor="@color/action_bar_end"
+        android:startColor="@color/action_bar_start" />
+</shape>

@@ -1,0 +1,131 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/back_campus1"
+
+    android:tint="#97373737"
+
+    android:theme="@style/ThemeLogin">
+
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation_view"
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="rip.json"
+        app:lottie_loop="true"
+        android:visibility="gone"/>
+
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="230dp">
+
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/text_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="#fff"
+            style="@style/TextLabel">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:textColor="#fff"
+                android:ems="10"
+                android:id="@+id/etUsername"
+                android:hint="Login"
+                android:backgroundTint="#fff"/>
+
+
+        </android.support.design.widget.TextInputLayout>
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="invisible"/>
+    </RelativeLayout>
+
+
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/text_input_layout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="#fff"
+        style="@style/TextLabel">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/etPassword"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:hint="Mot de passe"
+            android:backgroundTint="#fff"
+            android:textColor="#fff"/>
+
+
+    </android.support.design.widget.TextInputLayout>
+
+
+    <Button
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="se connecter"
+
+        android:id="@+id/btnLogin"
+        android:layout_gravity="center"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:textColor="#fff"/>
+
+    <Button
+        android:text="créer un compte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sign"
+        android:layout_gravity="center"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:textColor="#fff"/>
+
+
+    <Button
+        android:text="check"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/check"
+        android:visibility="gone"/>
+
+    <Button
+        android:text="test log"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/test"
+        android:visibility="gone"/>
+
+
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp" />
+
+
+</LinearLayout>

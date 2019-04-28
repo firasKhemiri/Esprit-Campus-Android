@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/event_coordinator"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="RtlHardcoded"
+    >
+
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/flexible.example.appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        >
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            app:title="Evennement"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+            app:expandedTitleTextAppearance="@style/CollapsingTextAppearance.Inverse"
+            app:contentScrim="?colorPrimary">
+
+            <ImageView
+                android:id="@+id/thumbnail"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/london_flat"
+                android:tint="#97373737"
+                android:scaleType="centerCrop" />
+
+
+
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/flexible.example.toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@null"
+                app:layout_collapseMode="pin">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/lin"
+                    android:orientation="horizontal"
+                    android:layout_gravity="right"
+                    android:gravity="center_vertical"
+                    android:layout_marginEnd="20dp">
+
+
+
+
+                </LinearLayout>
+
+
+
+            </android.support.v7.widget.Toolbar>
+
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        app:behavior_overlapTop="78dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:id="@+id/nestedScrollView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/carddate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:contentPaddingBottom="16dp"
+                app:contentPaddingLeft="16dp"
+                app:contentPaddingRight="16dp"
+                app:cardCornerRadius="20dp"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardElevation="4dp"
+                android:layout_margin="8dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <TextView
+                            android:id="@+id/event_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Event name"
+                            android:textSize="22sp"
+                            android:textStyle="normal|bold"
+                            android:maxWidth="280dp"
+                            android:layout_marginBottom="5dp"
+                            android:textColor="#313131"/>
+
+
+
+                        <Switch
+                            android:id="@+id/participate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+
+                            android:checked="false"
+                            android:theme="@style/redSwitch"
+                            android:layout_marginTop="5dp"/>
+
+                    </RelativeLayout>
+
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="2dp">
+
+
+                        <ImageView
+                            android:id="@+id/date_img"
+                            android:layout_width="22dp"
+                            android:layout_height="18dp"
+                            android:src="@drawable/clock"/>
+
+                        <TextView
+                            android:id="@+id/date"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:lineSpacingExtra="8dp"
+                            android:textSize="14sp"
+                            android:text="date"
+                            android:layout_toRightOf="@id/date_img"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="-1.5dp"
+
+                            android:textColor="@color/dark_red"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+
+
+
+
+                    <RelativeLayout
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="2dp">
+
+
+                        <ImageView
+                            android:id="@+id/place_img"
+                            android:layout_width="22dp"
+                            android:layout_height="18dp"
+                            android:src="@drawable/location"/>
+
+                        <TextView
+                            android:id="@+id/location"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:text="location"
+                            android:textColor="@color/dark_red"
+                            android:textStyle="bold"
+                            android:layout_toRightOf="@id/place_img"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="-1dp"/>
+
+
+                    </RelativeLayout>
+
+
+
+                    <RelativeLayout
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ProgressBar
+                            android:id="@+id/progress_bar_event"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"/>
+
+                        <TextView
+                            android:id="@+id/created_by_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Crée par"
+                            android:textColor="#313131"
+                            android:textSize="18sp"
+                            android:textStyle="bold"/>
+
+
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/user_avatar"
+                            android:id="@+id/profimg"
+                            android:layout_below="@+id/created_by_text"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginStart="2dp"
+                            android:scaleType="centerCrop"
+                            />
+
+                        <TextView
+                            android:id="@+id/created_by"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:text="Firas"
+                            android:layout_toRightOf="@+id/profimg"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginStart="3dp"
+
+                            android:textColor="#4e4e4e"
+
+                            android:layout_below="@+id/created_by_text" />
+
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/particip_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:contentPaddingBottom="16dp"
+                app:contentPaddingLeft="16dp"
+                app:contentPaddingRight="16dp"
+                app:cardCornerRadius="20dp"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardElevation="4dp"
+                android:layout_margin="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="16dp">
+
+                    <TextView
+                        android:id="@+id/participants_card"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Participants"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="#313131" />
+
+                    <TextView
+                        android:id="@+id/participants"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lineSpacingExtra="8dp"
+                        android:textSize="14sp"
+                        android:text="156 Etudiants"
+                        android:textColor="@color/dark_red"
+                        android:textStyle="bold" />
+
+
+                    <RelativeLayout
+                        android:id="@+id/particip_layy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/f_particip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="-4dp"
+                        android:layout_marginTop="3dp"
+                        android:visibility="visible">
+
+                    </android.support.v7.widget.RecyclerView>
+
+
+
+                    <RelativeLayout
+                        android:id="@+id/particip_lay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25.5dp"
+                        android:layout_toEndOf="@+id/f_particip"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="2.7dp"
+                        android:background="@drawable/circle_corner"
+                        android:visibility="visible">
+
+                        <TextView
+                            android:id="@+id/num_fol"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp"
+                            android:layout_marginTop="3.9dp"
+                            android:text="+3"
+                            android:layout_marginEnd="6.5dp"
+                            android:textSize="12sp"/>
+                    </RelativeLayout>
+
+                    </RelativeLayout>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/carddesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:contentPaddingBottom="16dp"
+                app:contentPaddingLeft="16dp"
+                app:contentPaddingRight="10dp"
+                app:cardCornerRadius="20dp"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardElevation="4dp"
+                android:layout_margin="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="16dp">
+
+                    <TextView
+                        android:id="@+id/details"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Détails"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="#313131" />
+
+                    <TextView
+                        android:id="@+id/descri"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:text="description njqsfjqsjfkjqsf sdf dsf qfqjfqdjfdf dfkjj description njqsfjqsjfkjqsf qfqjfqdjfdf dfkjj description njqsfjqsjfkjqsf qfqjfqdjfdf dfkjj description njqsfjqsjfkjqsf qfqjfqdjfdf dfkjj"
+                        />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardmap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardElevation="4dp"
+                android:layout_margin="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="0dp">
+
+                    <fragment
+                        android:id="@+id/map"
+                        android:name="com.example.firas.internfiretest.Tools.MapFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"/>
+                    </android.support.v7.widget.CardView>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+
+
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:background="@color/cardview_light_background"
+android:id="@+id/layoutt"
+android:paddingBottom="10dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_marginLeft="5dp"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/placeholder"
+        android:layout_gravity="center_vertical"
+        android:id="@+id/con_image"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="name "
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="6dp"
+            android:textSize="17dp"
+            android:textColor="#000"
+            android:id="@+id/con_name"
+            android:paddingEnd="40dp"/>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(prof) "
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="10dp"
+            android:textSize="14sp"
+            android:textColor="#000"
+            android:id="@+id/prof"
+            android:layout_alignRight="@id/con_name"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="classe:"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="6dp"
+            android:textSize="17dp"
+            android:textColor="#000"
+            android:id="@+id/classe_text" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3a4 "
+            android:textSize="17dp"
+            android:textColor="#000"
+            android:id="@+id/classe_name"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="60dp" />
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="departement:"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="6dp"
+            android:textSize="17dp"
+            android:textColor="#000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="info "
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="110dp"
+            android:textSize="17dp"
+            android:textColor="#000"
+            android:id="@+id/dep_name" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Accepter"
+            android:id="@+id/accept"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            style="@style/AlertDialog.AppCompat.Light"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    cardview:cardCornerRadius="2dp"
+    cardview:cardElevation="3dp"
+    cardview:cardUseCompatPadding="true">
+
+
+    <RelativeLayout
+        android:id="@+id/parentView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxHeight="520dp">
+
+        <ImageView
+            android:id="@+id/thumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="270dp"
+            android:src="@drawable/london_flat"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:scaleType="centerCrop"
+            android:tint="#81000000"
+            />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp">
+
+
+        <TextView
+            android:id="@+id/event_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="25sp"
+
+            android:maxWidth="320dp"
+
+            android:layout_marginStart="15dp"
+            android:textColor="#ffffff"
+            android:layout_above="@id/location"
+
+            android:textStyle="normal|bold"
+            />
+
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="20sp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="15dp"
+            android:layout_marginStart="15dp"
+            android:textColor="#ffffff"
+
+            android:maxWidth="320dp"
+
+            />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/user_avatar"
+            android:id="@+id/profimg"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"/>
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5 jours"
+            android:textSize="15sp"
+            android:textColor="#ffffff"
+            android:layout_alignBottom="@+id/profimg"
+            android:layout_marginStart="70dp"/>
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="18sp"
+            android:textColor="#ffffff"
+            android:textStyle="normal|bold"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentTop="true" />
+
+    </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

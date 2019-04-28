@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/categories"
+            android:title="Categories" />
+    </group>
+
+    <item android:title="Communication">
+        <menu>
+            <item
+                android:id="@+id/feedback"
+                android:title="Feedback" />
+            <item
+                android:id="@+id/deconnect"
+                android:title="Deconnexion" />
+        </menu>
+    </item>
+
+</menu>

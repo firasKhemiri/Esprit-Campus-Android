@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    android:background="@color/cardview_light_background"
+    android:id="@+id/layoutt">
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/post_card"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        cardview:cardCornerRadius="3dp"
+
+        cardview:cardUseCompatPadding="true">
+
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/cat_img"
+        android:layout_width="55dp"
+        android:layout_marginStart="10dp"
+        android:layout_height="55dp"
+        android:layout_gravity="center_vertical"
+
+        android:layout_alignEnd="@+id/cat_name"
+
+        android:scaleType="centerCrop"
+        android:src="@drawable/material_flat"
+        android:tint="#6a373737" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/cat_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="77dp"
+            android:layout_marginTop="14dp"
+            android:backgroundTint="#fff"
+            android:text="Test "
+            android:textColor="@color/browser_actions_title_color"
+            android:textSize="17sp"
+            android:textStyle="italic" />
+
+
+        <TextView
+            android:id="@+id/cat_posts_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="78dp"
+            android:layout_marginTop="36dp"
+            android:backgroundTint="#fff"
+            android:text="0 nouvelles publications "
+            android:textColor="#838383"
+            android:textSize="15sp"
+            android:textStyle="italic" />
+
+        <ImageButton
+            android:id="@+id/add_like"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+
+            android:layout_marginEnd="20dp"
+            android:adjustViewBounds="true"
+            android:background="#00000000"
+            android:cropToPadding="true"
+            android:scaleType="fitStart"
+            android:src="@drawable/not_liked"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+</LinearLayout>

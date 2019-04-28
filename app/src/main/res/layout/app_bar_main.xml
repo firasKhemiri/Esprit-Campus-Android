@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_scrollFlags="scroll|enterAlways|snap"
+        android:background="#fff">
+
+
+            <LinearLayout
+                android:id="@+id/materialup.title_container"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:theme="@style/MyActionBarWhite">
+
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:background="#00ffffff"
+                    android:layout_marginStart="-10dp"/>
+
+
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:background="@drawable/spinner_shape"
+                    android:orientation="horizontal"
+
+                    android:layout_marginStart="5dp"
+                    android:id="@+id/search_lay">
+
+
+                    <ImageButton
+                        android:id="@+id/search_icon"
+                        android:layout_width="30dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/search_but"
+                        android:background="#00000000"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="0dp"
+
+                        android:adjustViewBounds="true"
+                        android:cropToPadding="true"
+                        android:scaleType="fitStart"
+                        android:layout_gravity="center_vertical"
+
+                        android:tint="@color/icon_dark"
+                        />
+
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="Que cherches-tu ?"
+                        android:layout_marginTop="0dp"
+                        android:gravity="center_vertical"
+                        android:id="@+id/search"
+                        android:textColor="@color/icon_dark"
+                        android:layout_marginStart="38dp"
+                        android:textSize="17sp"
+
+                        android:background="#00000000" />
+
+
+                </RelativeLayout>
+
+                <ImageButton
+                    android:id="@+id/add_pub"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/add_but"
+                    android:background="#00000000"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginStart="15dp"
+
+                    android:adjustViewBounds="true"
+                    android:cropToPadding="true"
+                    android:scaleType="fitStart"
+                    android:layout_gravity="center_vertical"
+                    android:tint="@color/icon_dark"
+                    />
+
+
+                <RelativeLayout
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#00ffffff">
+
+                <ImageButton
+                    android:id="@+id/messages"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/message_but"
+                    android:background="#00ffffff"
+
+                    android:adjustViewBounds="true"
+                    android:cropToPadding="true"
+                    android:scaleType="fitStart"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="0dp"
+                    android:tint="@color/icon_dark"
+                    />
+
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/message_notif"
+                    android:id="@+id/mess_notif"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="-1dp"
+                    android:background="#00000000"/>
+
+
+                <TextView
+                    android:id="@+id/mess_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:textColor="#fff"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="18.5dp"
+                    android:layout_marginTop="-0.8dp"
+                    android:background="#00000000"
+                    android:textAlignment="center"/>
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_main" />
+
+</android.support.design.widget.CoordinatorLayout>

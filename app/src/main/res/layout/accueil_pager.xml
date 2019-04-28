@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2015 The Android Open Source Project
+  -->
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+
+            android:layout_below="@+id/appbar"
+            />
+
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="fill_parent"
+            android:background="#00ffffff"
+            android:layout_height="40dp"
+            app:tabSelectedTextColor="#ffffff"
+            app:tabIndicatorColor="#ffffff"
+            app:tabIndicatorHeight="4dp"
+            android:elevation="10dp"
+            android:layout_alignBottom="@id/viewpager"
+            />
+
+
+    </RelativeLayout>
+
+
+
+</android.support.design.widget.CoordinatorLayout>

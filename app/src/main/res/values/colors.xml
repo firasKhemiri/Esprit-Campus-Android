@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <color name="icon_dark">#6b6262</color>
+
+
+
+    <color name="cool">#ccc2a1</color>
+    <color name="darkCool">#bbf4e9e7</color>
+    <color name="coolAccent">#dabf2c</color>
+
+
+    <color name="primary">#d1cbb9</color>
+    <color name="primaryDark">#b3ac9a</color>
+    <color name="primaryAccent">#dabf2c</color>
+
+
+
+    <color name="tint">#46ffffff</color>
+
+    <color name="colorPrimary">#6c9bbe</color>
+    <color name="colorPrimaryDark">#204aa1</color>
+    <color name="colorAccent">#2f5cb9</color>
+
+
+    <color name="followbotton">#5dc768</color>
+    <color name="followbotton2">#e3e3e3</color>
+
+
+    <color name="orange_transparent">#00ffffff</color>
+
+
+
+    <color name="action_bar_start">#39bd7d</color>
+    <color name="action_bar_center">#3bbd9f</color>
+    <color name="action_bar_end">#3bb9bd</color>
+
+
+    <color name="action_bar_end_dark">#74a4c7</color>
+
+    <color name="action_bar_center_dark">#204aa1</color>
+
+
+    <color name="colorAccentS">#2f5cb9</color>
+
+
+    <color name="colortint">#4d000000</color>
+
+
+
+    <color name="dark_red">#c15252</color>
+
+
+
+
+</resources>

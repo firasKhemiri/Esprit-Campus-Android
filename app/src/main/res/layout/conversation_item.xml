@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="fill_parent"
+android:layout_height="70dp"
+android:background="@color/cardview_light_background"
+android:id="@+id/layoutt"
+android:paddingBottom="0dp">
+
+<de.hdodenhof.circleimageview.CircleImageView
+    android:layout_marginLeft="5dp"
+    android:layout_width="60dp"
+    android:layout_height="60dp"
+    android:layout_marginTop="7dp"
+    android:src="@drawable/placeholder"
+    android:id="@+id/con_image"
+    />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:maxWidth="230dp"
+    android:text="kllddddddddddddddddddddddddddddddddkkl "
+    android:layout_marginTop="15dp"
+    android:layout_marginLeft="18dp"
+    android:textSize="17dp"
+    android:textColor="#515151"
+    android:id="@+id/con_name"
+    android:ellipsize="end"
+    android:maxLines="1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxWidth="230dp"
+        android:text="hellodddffffffcb"
+        android:layout_marginTop="37dp"
+        android:layout_marginLeft="18dp"
+
+        android:textSize="15sp"
+        android:textColor="#6b6b6b"
+        android:id="@+id/lat_message"
+        android:singleLine="true"
+/>
+
+
+        <TextView
+            android:id="@+id/date_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/con_name"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@+id/lat_message"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:maxWidth="50dp"
+            android:singleLine="true"
+            android:text="5 hsfdf"
+
+            android:textColor="#6b6b6b"
+            android:textSize="15sp" />
+    </RelativeLayout>
+
+</LinearLayout>

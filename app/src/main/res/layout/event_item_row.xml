@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    android:id="@+id/event_lay"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+
+    <RelativeLayout
+        android:id="@+id/parentView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:maxHeight="520dp">
+
+        <ImageView
+            android:id="@+id/thumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:src="@drawable/london_flat"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:scaleType="centerCrop"
+            android:tint="#81000000"
+            android:background="@drawable/rounded_corner1"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginTop="1dp"
+            />
+
+        <RelativeLayout
+            android:id="@+id/desc_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_below="@+id/thumbnail">
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/user_avatar"
+                android:id="@+id/profimg"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mer , Dec5 - 2:30PM - 5:15PM"
+                android:textSize="14sp"
+                android:textColor="#c15252"
+                android:layout_alignBottom="@+id/profimg"
+                android:layout_marginStart="5dp"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                />
+
+            <TextView
+                android:id="@+id/event_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="19dp"
+                android:text="Machine Learning Training kdskkds jsdj jfjf jjf"
+                android:maxLines="3"
+                android:textColor="#393939"
+                android:textSize="18sp"
+                android:textStyle="normal|bold" />
+
+
+
+            <TextView
+                android:id="@+id/location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="-3dp"
+                android:layout_below="@id/event_name"
+
+                android:maxWidth="320dp"
+                android:text="Higher school of communication"
+                android:textColor="#7b7a7a"
+                android:maxLines="2"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/f_particip"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_below="@id/location"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="3dp"
+                android:visibility="gone">
+
+            </android.support.v7.widget.RecyclerView>
+
+
+
+            <RelativeLayout
+                android:id="@+id/particip_lay"
+                android:layout_width="wrap_content"
+                android:layout_height="25.5dp"
+                android:layout_toEndOf="@+id/f_particip"
+                android:layout_below="@id/location"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="2.7dp"
+                android:background="@drawable/circle_corner"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/num_fol"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="3.9dp"
+                    android:text="+3"
+                    android:layout_marginEnd="6.5dp"
+                    android:textSize="12sp"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/desc_lay"
+            android:layout_marginTop="3dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_alignParentBottom="true">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/cat_pic"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/material_flat"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="5dp"/>
+
+
+                <TextView
+                    android:id="@+id/cat_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginStart="40dp"
+
+                    android:layout_centerVertical="true"
+                    android:maxWidth="250dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="Takwira masta barcha"
+                    android:textColor="#7b7a7a"
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
+
+
+
+
+
+                <Switch
+                    android:id="@+id/participate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+
+                    android:checked="false"
+                    android:theme="@style/redSwitch"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="0dp"/>
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

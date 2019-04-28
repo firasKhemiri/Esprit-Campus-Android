@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f5f5"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:theme="@style/MyActionBarWhite">
+
+        <Button
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/back_arrow"
+            android:backgroundTint="@color/icon_dark"
+            android:id="@+id/back_button"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/con_image"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_toStartOf="@+id/con_name"
+            android:background="#00ffffff"
+            android:src="@drawable/user_avatar"
+            android:layout_marginEnd="10dp"/>
+
+        <TextView
+            android:id="@+id/con_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="#00ffffff"
+            android:text=""
+            android:textSize="20sp"
+            android:layout_marginTop="6dp"/>
+    </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="20">
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="155dp"
+                android:layout_marginTop="155dp"
+                />
+
+        </RelativeLayout>
+
+
+    <include
+        layout="@layout/type_message_area"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom" />
+</LinearLayout>

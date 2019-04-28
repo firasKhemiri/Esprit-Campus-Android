@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">Social Spirit</string>
+
+    <!--string name="aphost">http://192.168.43.58:8000</string-->
+    <!--<string name="aphost">http://192.168.43.244:8000</string>-->
+    <string name="aphost">http://campusesprit.westeurope.cloudapp.azure.com:8000</string>
+    <!--string name="aphost">http://192.168.137.32</string-->
+    <string name="aphostest">http://192.168.8.104</string>
+
+    <string name="facebook_app_id">1823460334559586</string>
+    <string name="fb_login_protocol_scheme">fb1823460334559586</string>
+
+
+    <string name="title_activity_accueil">Accueil</string>
+
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_example">Example action</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+
+
+    <string-array name="navigation_drawer_items_array">
+        <item>Connect</item>
+        <item>Fixtures</item>
+        <item>Table</item>
+    </string-array>
+
+
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">
+        AIzaSyAnsum9RqyUiH9N7v_-EAMocVB6tCGXmxY
+    </string>
+
+</resources>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="80dp"
+android:background="@color/cardview_light_background"
+android:id="@+id/layoutt"
+android:paddingBottom="10dp">
+
+<de.hdodenhof.circleimageview.CircleImageView
+    android:layout_marginLeft="5dp"
+    android:layout_width="65dp"
+    android:layout_height="65dp"
+    android:layout_marginTop="5dp"
+    android:src="@drawable/placeholder"
+    android:id="@+id/con_image"
+    />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="kllkkl "
+    android:layout_marginTop="15dp"
+    android:layout_marginLeft="6dp"
+    android:textSize="17dp"
+    android:textColor="#000"
+    android:id="@+id/con_name" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="kllkkl "
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="6dp"
+        android:textSize="17dp"
+        android:textColor="#000"
+        android:id="@+id/lat_message" />
+    </RelativeLayout>
+
+</LinearLayout>

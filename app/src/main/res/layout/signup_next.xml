@@ -1,0 +1,121 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:theme="@style/MyActionBarWhite">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Créer un compte"
+            android:gravity="center"
+            android:textSize="20dp"
+
+            android:textColor="#545454"
+            android:id="@+id/con_name" />
+
+    </LinearLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/text_input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.design.widget.TextInputLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="23sp"
+        android:text="Nom"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/textView3"
+        android:textColor="#545454"/>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/text_input_layout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/lsname"
+        android:hint="Ex: The 'D' is silent"
+        android:layout_marginStart="10dp" />
+    </android.support.design.widget.TextInputLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="23sp"
+        android:text="Prenom"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/textView"
+        android:textColor="#545454"/>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/text_input_layout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/fsname"
+        android:hint="Ex: Django "
+        android:layout_marginStart="10dp"/>
+    </android.support.design.widget.TextInputLayout>
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="23sp"
+        android:text="Date de naissance"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/date_nais"
+        android:textColor="#545454"/>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/text_input_layout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:id="@+id/date_naiss"
+            android:hint="Ex: 21/4/1995"
+            android:layout_marginStart="10dp"/>
+    </android.support.design.widget.TextInputLayout>
+
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Suivant"
+        android:layout_gravity="center"
+        android:id="@+id/btnLogin"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:textColor="#545454"/>
+</LinearLayout>

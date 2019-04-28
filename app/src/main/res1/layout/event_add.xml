@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:cardview="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:maxHeight="250dp"
+        app:srcCompat="@drawable/london_flat"
+        android:id="@+id/photup"
+        />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:theme="@style/MyActionBar">
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Changer le theme"
+
+            android:textColor="#fff"
+            android:background="#00000000"
+            android:id="@+id/load_pic" />
+
+    </LinearLayout>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/post_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        cardview:cardCornerRadius="8dp"
+        cardview:cardUseCompatPadding="true">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="3dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nom d'évènement "
+            android:textSize="20sp"
+            android:textColor="@color/action_bar_center_dark"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"/>
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/name"
+                android:layout_marginStart="10dp"/>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+            <Button
+                android:id="@+id/start_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="date debut"
+                android:layout_marginEnd="20dp"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                />
+
+
+            <Button
+                android:id="@+id/start_hour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="heure debut"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+            <Button
+                android:id="@+id/end_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="date fin"
+                android:layout_marginEnd="20dp"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"/>
+
+
+            <Button
+                android:id="@+id/end_hour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="heure fin"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lieu  "
+            android:textSize="20sp"
+            android:textColor="@color/action_bar_center_dark"
+            android:layout_marginStart="10dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/place"
+                android:layout_marginStart="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Détails d'évènement "
+            android:textSize="20sp"
+            android:textColor="@color/action_bar_center_dark"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"/>
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/descri"
+                android:layout_marginStart="10dp"/>
+
+        <Button
+            android:text="Valider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/valider"
+            android:layout_gravity="center"
+
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"/>
+
+    </LinearLayout>
+
+
+
+    </android.support.v7.widget.CardView>
+</LinearLayout>
+</android.support.v4.widget.NestedScrollView>
