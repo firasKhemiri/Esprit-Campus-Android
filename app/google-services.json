@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:327633724832:android:c97de1af84ff1e41",
         "android_client_info": {
-          "package_name": "com.example.firas.internfiretest"
+          "package_name": "com.esprit.firas.espritcampus"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "327633724832-9peh2ad77sghtp5oaqaf6utotq9r04k0.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.firas.internfiretest",
+            "package_name": "com.firas.firas.espritcampus",
             "certificate_hash": "337f6fced42b82330b3bcb48dd6e520910f48c75"
           }
         },

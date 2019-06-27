@@ -2,23 +2,23 @@
 <LinearLayout
 
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
 
-    android:background="@android:color/transparent">
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
 
     <FrameLayout
 
 
         android:layout_width="match_parent"
         android:layout_height="310dp"
-        android:layout_marginEnd="10dp"
-
         android:layout_marginStart="10dp"
+
         android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
         android:background="@drawable/dialog_frag_shape"
         android:padding="7dp">
 
@@ -26,8 +26,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:minHeight="420dp"
             android:minWidth="400dp"
+            android:minHeight="420dp"
             android:orientation="vertical">
 
 
@@ -36,9 +36,9 @@
                 android:id="@+id/school_card"
                 android:layout_width="match_parent"
                 android:layout_height="65dp"
-                android:layout_marginEnd="5dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
                 app:cardCornerRadius="20dp">
 
                 <RelativeLayout
@@ -58,13 +58,13 @@
                         android:src="@drawable/graduate_icon" />
 
                     <TextView
+                        android:id="@+id/school_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="22dp"
                         android:layout_toEndOf="@+id/circleImageView"
-                        android:text="Type Utilisateur: Etudiant"
-                        android:id="@+id/school_text"/>
+                        android:text="Type Utilisateur: Etudiant" />
 
                 </RelativeLayout>
 
@@ -78,9 +78,9 @@
                     android:id="@+id/followers_card"
                     android:layout_width="157.5dp"
                     android:layout_height="65dp"
-                    android:layout_marginEnd="10dp"
                     android:layout_marginStart="5dp"
                     android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
                     app:cardCornerRadius="20dp">
 
                     <RelativeLayout
@@ -129,9 +129,9 @@
                     android:layout_width="157.5dp"
                     android:layout_height="65dp"
                     android:layout_alignTop="@+id/followers_card"
+                    android:layout_marginEnd="5dp"
                     android:layout_toEndOf="@+id/followers_card"
-                    app:cardCornerRadius="20dp"
-                    android:layout_marginEnd="5dp">
+                    app:cardCornerRadius="20dp">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -159,17 +159,17 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerHorizontal="true"
-                                android:layout_marginEnd="10dp"
                                 android:layout_marginTop="15dp"
+                                android:layout_marginEnd="10dp"
                                 android:text="Suivis" />
 
                             <TextView
+                                android:id="@+id/following_text"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_below="@+id/abonn_text"
                                 android:layout_centerHorizontal="true"
-                                android:text="530"
-                                android:id="@+id/following_text"/>
+                                android:text="530" />
                         </RelativeLayout>
 
                     </RelativeLayout>
@@ -179,13 +179,13 @@
 
 
             <android.support.v7.widget.CardView
+                android:id="@+id/adr_card"
                 android:layout_width="match_parent"
                 android:layout_height="65dp"
-                android:layout_marginEnd="5dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="4dp"
-                app:cardCornerRadius="20dp"
-                android:id="@+id/adr_card">
+                android:layout_marginEnd="5dp"
+                app:cardCornerRadius="20dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -204,25 +204,25 @@
                         android:src="@drawable/home_icon" />
 
                     <TextView
+                        android:id="@+id/adr_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="22dp"
                         android:layout_toEndOf="@+id/adr_pic"
-                        android:text="Adresse: Mourouj 3"
-                        android:id="@+id/adr_text"/>
+                        android:text="Adresse: Mourouj 3" />
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
 
 
             <android.support.v7.widget.CardView
+                android:id="@+id/birthday_card"
                 android:layout_width="170.5dp"
                 android:layout_height="65dp"
-                android:layout_marginEnd="5dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="10dp"
-                app:cardCornerRadius="20dp"
-                android:id="@+id/birthday_card">
+                android:layout_marginEnd="5dp"
+                app:cardCornerRadius="20dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -242,13 +242,13 @@
 
 
                     <TextView
+                        android:id="@+id/birthday_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="22dp"
                         android:layout_toEndOf="@+id/date_pic"
-                        android:text="11/04/1758"
-                        android:id="@+id/birthday_text"/>
+                        android:text="11/04/1758" />
 
                 </RelativeLayout>
 

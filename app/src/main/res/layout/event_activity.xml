@@ -398,7 +398,7 @@
 
                     <fragment
                         android:id="@+id/map"
-                        android:name="com.example.firas.internfiretest.Tools.MapFragment"
+                        android:name="com.esprit.firas.espritcampus.Tools.MapFragment"
                         android:layout_width="match_parent"
                         android:layout_height="250dp"/>
                     </android.support.v7.widget.CardView>

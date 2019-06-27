@@ -1,9 +1,13 @@
 <resources>
-    <string name="app_name">Social Spirit</string>
+    <string name="app_name">Esprit Campus</string>
 
     <!--string name="aphost">http://192.168.43.58:8000</string-->
-    <!--<string name="aphost">http://192.168.43.244:8000</string>-->
-    <string name="aphost">http://campusesprit.westeurope.cloudapp.azure.com:8000</string>
+
+
+    <string name="aphost">http://192.168.43.244:8000</string>
+    <!--<string name="aphost">http://campusesprit.westeurope.cloudapp.azure.com:8000</string>-->
+
+
     <!--string name="aphost">http://192.168.137.32</string-->
     <string name="aphostest">http://192.168.8.104</string>
 

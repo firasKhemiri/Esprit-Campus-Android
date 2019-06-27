@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.firas.internfiretest">
+    package="com.esprit.firas.espritcampus">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -12,14 +12,14 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/campus"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:largeHeap="true"
         android:theme="@style/AppTheme2">
 
 
-        <activity android:name=".Accueil.AccueilActivity">
+        <activity android:name="com.esprit.firas.espritcampus.Accueil.AccueilActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,13 +30,13 @@
 
 
 
-        <service android:name=".FirebaseIDService">
+        <service android:name="com.esprit.firas.espritcampus.FirebaseIDService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
             </intent-filter>
         </service>
 
-        <service android:name=".MyFirebaseMessagingService">
+        <service android:name="com.esprit.firas.espritcampus.MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT"/>
             </intent-filter>
@@ -45,51 +45,51 @@
 
 
 
-        <activity android:name=".LoginActivity" />
+        <activity android:name="com.esprit.firas.espritcampus.LoginActivity" />
 
-        <activity android:name=".Profile.ProfileViewPager" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".Profile.UpdateProfile" />
-        <activity android:name=".OtherUser.UserViewPager" />
-        <activity android:name=".Messages.MainConversationsActivity" />
+        <activity android:name="com.esprit.firas.espritcampus.Profile.ProfileViewPager" />
+        <activity android:name="com.esprit.firas.espritcampus.MainActivity" />
+        <activity android:name="com.esprit.firas.espritcampus.Profile.UpdateProfile" />
+        <activity android:name="com.esprit.firas.espritcampus.OtherUser.UserViewPager" />
+        <activity android:name="com.esprit.firas.espritcampus.Messages.MainConversationsActivity" />
         <activity
-            android:name=".Messages.MainMessagesActivity"
+            android:name="com.esprit.firas.espritcampus.Messages.MainMessagesActivity"
             android:windowSoftInputMode="adjustPan|adjustResize" />
 
-        <activity android:name=".Search.SearchViewPager" />
-        <activity android:name=".Categories.CategoryPostsViewPager" />
-        <activity android:name=".Tools.Feed.SingleImage" />
-        <activity android:name=".Tools.AddData.AddStuffMain" />
-        <activity android:name=".School.AllStudentsViewPager" />
-        <activity android:name=".School.AllProfsViewPager" />
-        <activity android:name=".Tools.Lists.Departments" />
-        <activity android:name=".Notifications.NotificationsViewPager" />
+        <activity android:name="com.esprit.firas.espritcampus.Search.SearchViewPager" />
+        <activity android:name="com.esprit.firas.espritcampus.Categories.CategoryPostsViewPager" />
+        <activity android:name="com.esprit.firas.espritcampus.Tools.Feed.SingleImage" />
+        <activity android:name="com.esprit.firas.espritcampus.Tools.AddData.AddStuffMain" />
+        <activity android:name="com.esprit.firas.espritcampus.School.AllStudentsViewPager" />
+        <activity android:name="com.esprit.firas.espritcampus.School.AllProfsViewPager" />
+        <activity android:name="com.esprit.firas.espritcampus.Tools.Lists.Departments" />
+        <activity android:name="com.esprit.firas.espritcampus.Notifications.NotificationsViewPager" />
 
-        <activity android:name=".School.JoinRequest.JoinRequest" />
+        <activity android:name="com.esprit.firas.espritcampus.School.JoinRequest.JoinRequest" />
 
-        <activity android:name=".Notifications.Notifs.CreateNotif" />
-        <activity android:name=".School.SchoolMainPager" />
-        <activity android:name=".Tools.AddData.UpdatePhotoActual" />
-        <activity android:name=".Tools.AddData.UpdateEventActual" />
-        <activity android:name=".Tools.AddData.AddCours" />
+        <activity android:name="com.esprit.firas.espritcampus.Notifications.Notifs.CreateNotif" />
+        <activity android:name="com.esprit.firas.espritcampus.School.SchoolMainPager" />
+        <activity android:name="com.esprit.firas.espritcampus.Tools.AddData.UpdatePhotoActual" />
+        <activity android:name="com.esprit.firas.espritcampus.Tools.AddData.UpdateEventActual" />
+        <activity android:name="com.esprit.firas.espritcampus.Tools.AddData.AddCours" />
 
-        <activity android:name=".Categories.CategoriesViewPager" />
+        <activity android:name="com.esprit.firas.espritcampus.Categories.CategoriesViewPager" />
 
-        <activity android:name=".Tools.UpdateData.UpdatePhoto" />
-        <activity android:name=".Tools.Events.MainSingleEventActivity" />
-        <activity android:name=".Tools.Events.MainParticipants" />
+        <activity android:name="com.esprit.firas.espritcampus.Tools.UpdateData.UpdatePhoto" />
+        <activity android:name="com.esprit.firas.espritcampus.Tools.Events.MainSingleEventActivity" />
+        <activity android:name="com.esprit.firas.espritcampus.Tools.Events.MainParticipants" />
 
-        <activity android:name=".School.Documnts.DocumentsViewPager" />
-        <activity android:name=".Signup.SignupActivity" />
+        <activity android:name="com.esprit.firas.espritcampus.School.Documnts.DocumentsViewPager" />
+        <activity android:name="com.esprit.firas.espritcampus.Signup.SignupActivity" />
 
-        <activity android:name=".Signup.SignupActivity2" />
+        <activity android:name="com.esprit.firas.espritcampus.Signup.SignupActivity2" />
 
-        <activity android:name=".Signup.SignupActivity3" />
+        <activity android:name="com.esprit.firas.espritcampus.Signup.SignupActivity3" />
 
-        <activity android:name=".Search.Users.SearchFollowers" />
+        <activity android:name="com.esprit.firas.espritcampus.Search.Users.SearchFollowers" />
 
 
-        <activity android:name=".School.Department.DepartmentViewPager" />
+        <activity android:name="com.esprit.firas.espritcampus.School.Department.DepartmentViewPager" />
 
 
 
