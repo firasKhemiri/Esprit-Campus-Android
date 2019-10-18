@@ -38,6 +38,8 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.esprit.firas.espritcampus.Entities.Event;
 import com.esprit.firas.espritcampus.Entities.User;
+import com.esprit.firas.espritcampus.OtherUser.UserViewPager;
+import com.esprit.firas.espritcampus.Profile.ProfileViewPager;
 import com.esprit.firas.espritcampus.R;
 import com.esprit.firas.espritcampus.Tools.MapFragment;
 import com.esprit.firas.espritcampus.Tools.Services;
@@ -69,6 +71,8 @@ public class MainSingleEventActivity extends AppCompatActivity
     String host;
 
     int id_event;
+
+
 
     ArrayList<User> userslist;
 
@@ -130,6 +134,31 @@ public class MainSingleEventActivity extends AppCompatActivity
 
         id_event = i.getIntExtra("id",0);
         GetEventData(id_event);
+
+        RelativeLayout creator = findViewById(R.id.creator);
+
+        creator.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //   Toast.makeText(mContext," "+userItemList.get(getAdapterPosition()).getFrd_id(),Toast.LENGTH_LONG).show();
+
+                int userid = getIntent().getIntExtra("creator_id",0);
+
+                if(userid == getIntent().getIntExtra("my_id",0))
+                {
+                    Intent intent = new Intent(getApplicationContext(), ProfileViewPager.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
+                }
+                else
+                {
+                    Intent intent = new Intent(getApplicationContext(), UserViewPager.class)
+                            .putExtra("userid", userid);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
+                }
+            }
+        });
 
       //  getComments();
     }
@@ -274,16 +303,20 @@ public class MainSingleEventActivity extends AppCompatActivity
                             else
                                 participated.setText(eventItem.getNum_participants()+" Etudiant(s).");
 
-                            participants_card.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-                                    Intent i = new Intent(getApplicationContext(),MainParticipants.class)
-                                            .putExtra("postid",String.valueOf(id));
-                                    startActivity(i);
-                                }
-                            });
-
                             eventItem.setParticpants(participants);
+
+                            if (eventItem.getParticpants().size()>0) {
+
+                                participants_card.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        Intent i = new Intent(getApplicationContext(), MainParticipants.class)
+                                                .putExtra("postid", String.valueOf(id));
+                                        startActivity(i);
+                                    }
+                                });
+                            }
+
 
                             if (eventItem.getParticpants().size()>0) {
 

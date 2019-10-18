@@ -291,7 +291,7 @@ public class MainMessagesActivity extends AppCompatActivity {
                // Toast.makeText(getApplicationContext(), "Push notification: " + convo_id, Toast.LENGTH_LONG).show();
 
 
-                Toast.makeText(getApplicationContext(),"time: "+time,Toast.LENGTH_LONG).show();
+            //    Toast.makeText(getApplicationContext(),"time: "+time,Toast.LENGTH_LONG).show();
 
                 msgg.setId(mess_id);
                 msgg.setSender(sender);

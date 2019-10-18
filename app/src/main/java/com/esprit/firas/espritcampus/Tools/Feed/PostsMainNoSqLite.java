@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.android.volley.DefaultRetryPolicy;
@@ -59,6 +60,7 @@ public class PostsMainNoSqLite extends Fragment {
     SwipeRefreshLayout swipy;
     View view;
 
+    private RelativeLayout illuLay;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -72,6 +74,7 @@ public class PostsMainNoSqLite extends Fragment {
 
         host = getString(R.string.aphost);
 
+        illuLay = view.findViewById(R.id.illu_lay);
 
         mLayoutManager = new LinearLayoutManager(view.getContext());
 
@@ -294,9 +297,14 @@ public class PostsMainNoSqLite extends Fragment {
                             }
 
                             else
-
                                 adapter.notifyDataSetChanged();
 
+
+                            if (allposts.size()==0)
+                            {
+                                illuLay.setVisibility(View.VISIBLE);
+                                mRecyclerView.setVisibility(View.GONE);
+                            }
 
                         } catch (JSONException e) {
                             e.printStackTrace();

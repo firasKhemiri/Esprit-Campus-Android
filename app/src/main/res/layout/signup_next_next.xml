@@ -67,7 +67,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Inscrire"
+        android:text="S'inscrire"
         android:layout_gravity="center"
         android:id="@+id/btnLogin"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"

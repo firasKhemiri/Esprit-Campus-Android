@@ -1056,7 +1056,7 @@ public void UpdatePost(final int postid, final String name, final int cat_id, fi
                         Log.d("Response", response);
                         //Toast.makeText(MainActivity.this," "+ response, Toast.LENGTH_LONG).show();
 
-                           Toast.makeText(context, name +" "+cat_id,Toast.LENGTH_LONG).show();
+//                           Toast.makeText(context, name +" "+cat_id,Toast.LENGTH_LONG).show();
                         Intent i = new Intent(context, AccueilActivity.class);
                         i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -1071,14 +1071,22 @@ public void UpdatePost(final int postid, final String name, final int cat_id, fi
                         Toast.makeText(context, "network error", Toast.LENGTH_LONG).show();
                     }
                 }
-        ) {
+        )
+        {
             @Override
-            public Map<String, String> getHeaders() {
-
+            protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<>();
-                params.put("Authorization", "Bearer " + token);
                 params.put("cat_id", String.valueOf(cat_id));
                 params.put("name", name);
+
+                return params;
+            }
+
+            @Override
+            public Map<String, String> getHeaders() {
+                Map<String, String> params = new HashMap<>();
+                params.put("Authorization", "Bearer " + token);
+
 
                 return params;
             }
@@ -1100,7 +1108,7 @@ public void UpdatePost(final int postid, final String name, final int cat_id, fi
 
         Date s = c.getTime();
 
-        long diffInMs = ((s.getTime() - d.getTime()) / 1000) - 7200;
+        long diffInMs = ((s.getTime() - d.getTime()) / 1000) - 3600;
 
 
         Long days = diffInMs / (60 * 60 * 24);
@@ -1316,7 +1324,7 @@ public void UpdatePost(final int postid, final String name, final int cat_id, fi
         final String token = pref.getString("token", null);
 
         RequestQueue queue = Volley.newRequestQueue(context);
-        String url = host + "/api/deletevent";
+        String url = host + "/api/event/" + postid + "/update/";
         StringRequest postRequest = new StringRequest(Request.Method.DELETE, url,
                 new Response.Listener<String>() {
 
@@ -1364,7 +1372,7 @@ public void UpdatePost(final int postid, final String name, final int cat_id, fi
 
         RequestQueue queue = Volley.newRequestQueue(context);
         String url = host + "/api/comment/" + commentid + "/update/";
-        StringRequest postRequest = new StringRequest(Request.Method.PATCH, url,
+        StringRequest postRequest = new StringRequest(Request.Method.PUT, url,
                 new Response.Listener<String>() {
 
                     @Override
@@ -1424,24 +1432,25 @@ public void UpdatePost(final int postid, final String name, final int cat_id, fi
                     public void onResponse(String response) {
                         // response
                         Log.d("Response", response);
-                        //    Toast.makeText(context," "+ response, Toast.LENGTH_LONG).show();
+                        //Toast.makeText(MainActivity.this," "+ response, Toast.LENGTH_LONG).show();
 
-                        Intent i = new Intent(context, AccueilActivity.class);
+                        Toast.makeText(context, "Succès", Toast.LENGTH_LONG).show();
+
+                        Intent i = new Intent(context,AccueilActivity.class);
                         i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         context.startActivity(i);
-
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Log.d("ERROR", "error => " + error.toString());
-                        Toast.makeText(context, "network error", Toast.LENGTH_LONG).show();
+                        Toast.makeText(context, "Erreur", Toast.LENGTH_LONG).show();
+
                     }
                 }
         ) {
-
 
             @Override
             protected Map<String, String> getParams() {
@@ -1450,18 +1459,20 @@ public void UpdatePost(final int postid, final String name, final int cat_id, fi
 
             @Override
             public Map<String, String> getHeaders() {
+
                 Map<String, String> params = new HashMap<>();
                 params.put("Authorization", "Bearer " + token);
-
 
                 return params;
             }
         };
+
         postRequest.setRetryPolicy(new DefaultRetryPolicy(
                 15000,
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         queue.add(postRequest);
+
 
     }
 

@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.DefaultRetryPolicy;
@@ -50,6 +51,8 @@ public class MainConversationsActivity extends AppCompatActivity {
     private ProgressBar progressBar;
 
     private boolean first;
+
+    private TextView notice;
 
     private int previousTotal = 0;
     private boolean loading = true;
@@ -87,6 +90,7 @@ public class MainConversationsActivity extends AppCompatActivity {
 
         mRecyclerView.setLayoutManager(mLayoutManager);
 
+        notice = findViewById(R.id.notice);
 
         first = true;
 
@@ -321,8 +325,15 @@ public class MainConversationsActivity extends AppCompatActivity {
 
                             else
                                 adapter.notifyDataSetChanged();
-                                adapter = new ConversationsRecyclerViewAdapter(getApplicationContext(), convoList);
-                                mRecyclerView.setAdapter(adapter);
+
+//                            adapter = new ConversationsRecyclerViewAdapter(getApplicationContext(), convoList);
+//                            mRecyclerView.setAdapter(adapter);
+
+                            if (convoList.size()==0)
+                            {
+                                notice.setVisibility(View.VISIBLE);
+                                mRecyclerView.setVisibility(View.GONE);
+                            }
 
                         }
 

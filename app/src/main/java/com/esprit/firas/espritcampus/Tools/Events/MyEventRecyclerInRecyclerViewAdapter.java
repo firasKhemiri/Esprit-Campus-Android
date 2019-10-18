@@ -282,7 +282,9 @@ public class MyEventRecyclerInRecyclerViewAdapter extends RecyclerView.Adapter<M
                             .putExtra("particip", post.getNum_participants())
                             .putExtra("datebeg", post.getDateBeg())
                             .putExtra("datend", post.getDateEnd())
-                            .putExtra("participated", post.isParticipated());
+                            .putExtra("participated", post.isParticipated())
+                            .putExtra("creator_id",post.getUser_id())
+                            .putExtra("my_id",post.getIdme());
 
                     mContext.startActivity(intent);
                 }
@@ -314,7 +316,7 @@ public class MyEventRecyclerInRecyclerViewAdapter extends RecyclerView.Adapter<M
 
                             if (which ==0 && event.getIdme() == event.getUser_id())
                             {
-                                new Services().DeletePost(event.getId(),mContext);
+                                new Services().DeleteEvent(String.valueOf(event.getId()),mContext);
 
                                 feedItemList.remove(getAdapterPosition());
                                 notifyItemRemoved(getAdapterPosition());

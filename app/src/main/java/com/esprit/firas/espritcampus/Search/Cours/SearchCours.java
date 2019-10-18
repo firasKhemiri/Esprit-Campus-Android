@@ -66,6 +66,8 @@ public class SearchCours extends Fragment {
 
     private int i;
 
+    private TextView notice;
+
 
 
     LinearLayoutManager mLayoutManager;
@@ -93,6 +95,7 @@ public class SearchCours extends Fragment {
         progressBar = (ProgressBar) view.findViewById(R.id.progress_bar);
 
 
+        notice = view.findViewById(R.id.notice);
 
         progressBar.setVisibility(View.GONE);
 
@@ -180,7 +183,7 @@ public class SearchCours extends Fragment {
                         Log.i("Yaeye!", "end called");
                         GetCategories(host + url+"?search="+text + "&limit=5&offset=" + offset);
 
-                        Toast.makeText(view.getContext(), " " + offset, Toast.LENGTH_LONG).show();
+                 //       Toast.makeText(view.getContext(), " " + offset, Toast.LENGTH_LONG).show();
 
                         loading = true;
                     }
@@ -285,6 +288,11 @@ public class SearchCours extends Fragment {
                             else
                                 adapter.notifyDataSetChanged();
 
+                            if (allcours.size()==0)
+                            {
+                                notice.setVisibility(View.VISIBLE);
+                                mRecyclerView.setVisibility(View.GONE);
+                            }
 
                         } catch (JSONException e) {
                             e.printStackTrace();

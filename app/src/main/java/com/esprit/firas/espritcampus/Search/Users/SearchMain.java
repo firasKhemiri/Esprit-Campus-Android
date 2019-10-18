@@ -62,6 +62,8 @@ public class SearchMain extends Fragment {
 
     int offset = 0;
 
+    private TextView notice;
+
     String text;
 
     String host;
@@ -84,6 +86,8 @@ public class SearchMain extends Fragment {
         host = getString(R.string.aphost);
 
         progressBar.setVisibility(View.GONE);
+
+        notice = view.findViewById(R.id.notice);
 
         mLayoutManager = new LinearLayoutManager(view.getContext());
 
@@ -175,7 +179,7 @@ public class SearchMain extends Fragment {
                         Log.i("Yaeye!", "end called");
                         GetSearchResults(host+"/api/users?search="+text + "&limit=30&offset=" + offset);
 
-                        Toast.makeText(view.getContext(), " " + offset, Toast.LENGTH_SHORT).show();
+           //             Toast.makeText(view.getContext(), " " + offset, Toast.LENGTH_SHORT).show();
 
                         loading = true;
                     }
@@ -271,6 +275,12 @@ public class SearchMain extends Fragment {
                             else
                                 adapter.notifyDataSetChanged();
 
+
+                            if (searchList.size()==0)
+                            {
+                                notice.setVisibility(View.VISIBLE);
+                                mRecyclerView.setVisibility(View.GONE);
+                            }
 
                         }
 

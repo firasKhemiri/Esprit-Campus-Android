@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -93,6 +94,17 @@ public class SearchFollowers extends AppCompatActivity {
         GetSearchResults(host+"/"+url);
 
 
+        Button back = findViewById(R.id.back_button);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+
+
         search.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
@@ -147,7 +159,7 @@ public class SearchFollowers extends AppCompatActivity {
                         Log.i("Yaeye!", "end called");
                         GetSearchResults(host+"/api/users?search="+text + "&limit=30&offset=" + offset);
 
-                        Toast.makeText(getApplicationContext(), " " + offset, Toast.LENGTH_SHORT).show();
+                  //      Toast.makeText(getApplicationContext(), " " + offset, Toast.LENGTH_SHORT).show();
 
                         loading = true;
                     }

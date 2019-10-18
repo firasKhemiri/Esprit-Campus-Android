@@ -57,7 +57,7 @@ public class SearchRecyclerViewAdapter extends RecyclerView.Adapter<SearchRecycl
 
 
         Glide.with(mContext)
-                .load(host+"/images/prof/"+user.getProfile_pic()).dontAnimate()
+                .load(host+"/"+user.getProfile_pic()).dontAnimate()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .fitCenter()
                 .error(R.drawable.user_avatar)

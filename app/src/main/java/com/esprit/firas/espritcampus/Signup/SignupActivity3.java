@@ -23,6 +23,8 @@ import android.widget.Toast;
 import com.esprit.firas.espritcampus.R;
 import com.esprit.firas.espritcampus.Tools.Services;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.FileDescriptor;
 import java.io.IOException;
 import java.util.HashMap;
@@ -123,12 +125,12 @@ public class SignupActivity3 extends AppCompatActivity {
             Log.i(TAG, "Handler " + msg.what);
             if (msg.what == 1) {
                 // txtStatus.setText("Upload Success");
-                Toast.makeText(getApplicationContext(),"Upload Success",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"Succès",Toast.LENGTH_LONG).show();
 
 
             } else {
                 //  txtStatus.setText("Upload Error");
-                Toast.makeText(getApplicationContext(),"Upload Error",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"Erreur",Toast.LENGTH_LONG).show();
             }
         }
 
@@ -146,37 +148,148 @@ public class SignupActivity3 extends AppCompatActivity {
             Log.i(TAG, " File path : " + selectedFilePath);
             try {
                 bmpp = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
-                photoprof.setImageBitmap(bmpp);
 
+                int taille = (bmpp.getRowBytes() * bmpp.getHeight()) / 1024;
+//                Toast.makeText(getApplicationContext(), " " + taille, Toast.LENGTH_LONG).show();
+                Bitmap decoded;
 
-                new Services().AddPhotoprof(bmpp, handler, getApplicationContext());
+                if (taille >= 70000) {
+                    ByteArrayOutputStream out = new ByteArrayOutputStream();
+                    bmpp.compress(Bitmap.CompressFormat.JPEG, 20, out);
+                    decoded = BitmapFactory.decodeStream(new ByteArrayInputStream(out.toByteArray()));
+
+                    photoprof.setImageBitmap(decoded);
+                    // Toast.makeText(getApplicationContext()," 1 "+taille,Toast.LENGTH_LONG).show();
+
+                } else if (taille >= 60000) {
+                    ByteArrayOutputStream out = new ByteArrayOutputStream();
+                    bmpp.compress(Bitmap.CompressFormat.JPEG, 30, out);
+                    decoded = BitmapFactory.decodeStream(new ByteArrayInputStream(out.toByteArray()));
+
+                    photoprof.setImageBitmap(decoded);
+                    //  Toast.makeText(getApplicationContext()," 1 "+taille,Toast.LENGTH_LONG).show();
+
+                } else if (taille >= 50000) {
+                    ByteArrayOutputStream out = new ByteArrayOutputStream();
+                    bmpp.compress(Bitmap.CompressFormat.JPEG, 40, out);
+                    decoded = BitmapFactory.decodeStream(new ByteArrayInputStream(out.toByteArray()));
+
+                    photoprof.setImageBitmap(decoded);
+                    // Toast.makeText(getApplicationContext()," 2 "+taille,Toast.LENGTH_LONG).show();
+
+                } else if (taille >= 40000) {
+                    ByteArrayOutputStream out = new ByteArrayOutputStream();
+                    bmpp.compress(Bitmap.CompressFormat.JPEG, 50, out);
+                    decoded = BitmapFactory.decodeStream(new ByteArrayInputStream(out.toByteArray()));
+
+                    photoprof.setImageBitmap(decoded);
+                    //  Toast.makeText(getApplicationContext()," 3 "+taille,Toast.LENGTH_LONG).show();
+
+                } else if (taille >= 20000) {
+                    ByteArrayOutputStream out = new ByteArrayOutputStream();
+                    bmpp.compress(Bitmap.CompressFormat.JPEG, 60, out);
+                    decoded = BitmapFactory.decodeStream(new ByteArrayInputStream(out.toByteArray()));
+
+                    photoprof.setImageBitmap(decoded);
+                    //   Toast.makeText(getApplicationContext()," 4 "+taille,Toast.LENGTH_LONG).show();
+
+                } else {
+                    ByteArrayOutputStream out = new ByteArrayOutputStream();
+                    bmpp.compress(Bitmap.CompressFormat.JPEG, 100, out);
+                    decoded = BitmapFactory.decodeStream(new ByteArrayInputStream(out.toByteArray()));
+
+                    photoprof.setImageBitmap(decoded);
+                    // Toast.makeText(getApplicationContext()," 5 "+taille,Toast.LENGTH_LONG).show();
+                }
+
+                new Services().AddPhotoprof(decoded, handler, getApplicationContext());
 
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-
-
-
 
         else if (requestCode == RESULT_COUV && resultCode == RESULT_OK && data != null && data.getData() != null) {
 
+                Uri filePath = data.getData();
+                String selectedFilePath = getPath(filePath);
+                Log.i(TAG, " File path : " + selectedFilePath);
+                try {
+                    bmpc = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
 
-            Uri filePath = data.getData();
-            String selectedFilePath = getPath(filePath);
-            Log.i(TAG, " File path : " + selectedFilePath);
-            try {
-                bmpc = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
-                photocouv.setImageBitmap(bmpc);
+                    int taille = (bmpc.getRowBytes() * bmpc.getHeight())/1024;
+//                    Toast.makeText(getApplicationContext()," "+taille,Toast.LENGTH_LONG).show();
+                    Bitmap decoded ;
 
+                    if(taille>=70000) {
+                        ByteArrayOutputStream out = new ByteArrayOutputStream();
+                        bmpc.compress(Bitmap.CompressFormat.JPEG, 20, out);
+                        decoded = BitmapFactory.decodeStream(new ByteArrayInputStream(out.toByteArray()));
 
-                new Services().AddPhotoCouv(bmpc, handler, getApplicationContext());
+                        photocouv.setImageBitmap(decoded);
+                        // Toast.makeText(getApplicationContext()," 1 "+taille,Toast.LENGTH_LONG).show();
 
-            } catch (IOException e) {
-                e.printStackTrace();
+                    }
+
+                    else if(taille>=60000) {
+                        ByteArrayOutputStream out = new ByteArrayOutputStream();
+                        bmpc.compress(Bitmap.CompressFormat.JPEG, 30, out);
+                        decoded = BitmapFactory.decodeStream(new ByteArrayInputStream(out.toByteArray()));
+
+                        photocouv.setImageBitmap(decoded);
+                        //  Toast.makeText(getApplicationContext()," 1 "+taille,Toast.LENGTH_LONG).show();
+
+                    }
+
+                    else if(taille>=50000) {
+                        ByteArrayOutputStream out = new ByteArrayOutputStream();
+                        bmpc.compress(Bitmap.CompressFormat.JPEG, 40, out);
+                        decoded = BitmapFactory.decodeStream(new ByteArrayInputStream(out.toByteArray()));
+
+                        photocouv.setImageBitmap(decoded);
+                        // Toast.makeText(getApplicationContext()," 2 "+taille,Toast.LENGTH_LONG).show();
+
+                    }
+
+                    else if(taille>=40000) {
+                        ByteArrayOutputStream out = new ByteArrayOutputStream();
+                        bmpc.compress(Bitmap.CompressFormat.JPEG, 50, out);
+                        decoded = BitmapFactory.decodeStream(new ByteArrayInputStream(out.toByteArray()));
+
+                        photocouv.setImageBitmap(decoded);
+                        //  Toast.makeText(getApplicationContext()," 3 "+taille,Toast.LENGTH_LONG).show();
+
+                    }
+
+                    else if(taille>=20000) {
+                        ByteArrayOutputStream out = new ByteArrayOutputStream();
+                        bmpc.compress(Bitmap.CompressFormat.JPEG, 60, out);
+                        decoded = BitmapFactory.decodeStream(new ByteArrayInputStream(out.toByteArray()));
+
+                        photocouv.setImageBitmap(decoded);
+                        //   Toast.makeText(getApplicationContext()," 4 "+taille,Toast.LENGTH_LONG).show();
+
+                    }
+
+                    else {
+                        ByteArrayOutputStream out = new ByteArrayOutputStream();
+                        bmpc.compress(Bitmap.CompressFormat.JPEG, 100, out);
+                        decoded = BitmapFactory.decodeStream(new ByteArrayInputStream(out.toByteArray()));
+
+                        photocouv.setImageBitmap(decoded);
+                        // Toast.makeText(getApplicationContext()," 5 "+taille,Toast.LENGTH_LONG).show();
+
+                    }
+
+                    new Services().AddPhotoCouv(decoded, handler, getApplicationContext());
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
-    }
+
+
 
 
     public String getPath(Uri uri) {

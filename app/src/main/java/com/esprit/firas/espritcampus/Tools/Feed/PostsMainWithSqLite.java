@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.android.volley.DefaultRetryPolicy;
@@ -50,6 +51,9 @@ public class PostsMainWithSqLite extends Fragment {
     private boolean loading = true;
     int firstVisibleItem, visibleItemCount, totalItemCount,pastVisiblesItems;
 
+
+    private RelativeLayout illuLay;
+
     private boolean first = true;
 
     String url = "/api/feed/";
@@ -72,6 +76,7 @@ public class PostsMainWithSqLite extends Fragment {
 
         host = getString(R.string.aphost);
 
+        illuLay = view.findViewById(R.id.illu_lay);
 
         mLayoutManager = new LinearLayoutManager(view.getContext());
 
@@ -293,8 +298,13 @@ public class PostsMainWithSqLite extends Fragment {
                             }
 
                             else
-
                                 adapter.notifyDataSetChanged();
+
+                            if (allposts.size()==0)
+                            {
+                                illuLay.setVisibility(View.VISIBLE);
+                                mRecyclerView.setVisibility(View.GONE);
+                            }
 
 
                         } catch (JSONException e) {

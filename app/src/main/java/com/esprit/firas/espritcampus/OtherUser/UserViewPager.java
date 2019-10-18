@@ -271,7 +271,7 @@ public class UserViewPager extends AppCompatActivity implements AppBarLayout.OnO
                 args.putString("classe", classe_name);
                 args.putString("birthday", birthday);
                 args.putBoolean("isProfessor", isProfessor);
-                args.putInt("userId", user_id);
+                args.putInt("user_id", user_id);
                 //   dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 userDialogFragment.setArguments(args);
 

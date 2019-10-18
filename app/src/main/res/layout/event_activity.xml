@@ -22,7 +22,7 @@
             android:id="@+id/collapsing"
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            app:title="Evennement"
+            app:title="Evénement"
             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
             app:expandedTitleTextAppearance="@style/CollapsingTextAppearance.Inverse"
             app:contentScrim="?colorPrimary">
@@ -111,7 +111,7 @@
                             android:id="@+id/event_name"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Event name"
+                            android:text="Nom d'événement"
                             android:textSize="22sp"
                             android:textStyle="normal|bold"
                             android:maxWidth="280dp"
@@ -198,7 +198,8 @@
                     <RelativeLayout
                         android:layout_marginTop="5dp"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:id="@+id/creator">
 
                         <ProgressBar
                             android:id="@+id/progress_bar_event"
@@ -274,7 +275,7 @@
                         android:id="@+id/participants_card"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Participants"
+                        android:text="Les participants"
                         android:textStyle="bold"
                         android:textSize="18sp"
                         android:textColor="#313131" />

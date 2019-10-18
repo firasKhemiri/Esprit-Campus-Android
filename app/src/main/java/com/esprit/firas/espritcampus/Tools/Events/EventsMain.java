@@ -14,6 +14,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.DefaultRetryPolicy;
@@ -58,15 +60,9 @@ public class EventsMain extends Fragment {
 
     GridLayoutManager mLayoutManager;
 
+    private RelativeLayout illuLay;
 
 
-
-
-  /*  @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.accueil_pager_activity);
-*/
     View view;
 
     SwipeRefreshLayout swipy;
@@ -83,6 +79,10 @@ public class EventsMain extends Fragment {
         progressBar = view.findViewById(R.id.progress_bar);
 
         mLayoutManager = new GridLayoutManager(view.getContext(), 2);
+        illuLay = view.findViewById(R.id.illu_lay);
+
+        TextView illuText = view.findViewById(R.id.illu_text);
+        illuText.setText("Pas de événements à afficher");
 
         mLayoutManager.setSpanSizeLookup( new GridLayoutManager.SpanSizeLookup() {
             @Override
@@ -359,6 +359,12 @@ public class EventsMain extends Fragment {
 
                                 adapter.notifyDataSetChanged();
 
+
+                            if (allevents.size()==0)
+                            {
+                                illuLay.setVisibility(View.VISIBLE);
+                                mRecyclerView.setVisibility(View.GONE);
+                            }
 
                         } catch (JSONException e) {
                             e.printStackTrace();

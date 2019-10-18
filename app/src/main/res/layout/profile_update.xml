@@ -179,7 +179,8 @@
         android:layout_gravity="center"
         android:id="@+id/pass"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
-        android:textColor="#565656"/>
+        android:textColor="#565656"
+        android:visibility="gone"/>
 
 
     <Button
@@ -189,7 +190,8 @@
         android:layout_gravity="center"
         android:id="@+id/delete_user"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
-        android:textColor="#565656"/>
+        android:textColor="#565656"
+        android:visibility="gone"/>
 
 </LinearLayout>
 

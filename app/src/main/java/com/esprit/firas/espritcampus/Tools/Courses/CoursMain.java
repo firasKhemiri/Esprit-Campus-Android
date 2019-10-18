@@ -13,6 +13,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.DefaultRetryPolicy;
@@ -59,6 +61,7 @@ public class CoursMain extends Fragment {
 
 
 
+    RelativeLayout illuLay;
 
 
   /*  @Override
@@ -79,6 +82,11 @@ public class CoursMain extends Fragment {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
         progressBar = view.findViewById(R.id.progress_bar);
 
+        illuLay = view.findViewById(R.id.illu_lay);
+
+
+        TextView illuText = view.findViewById(R.id.illu_text);
+        illuText.setText("Pas de documents à afficher");
 
         host = getString(R.string.aphost);
 
@@ -264,9 +272,14 @@ public class CoursMain extends Fragment {
                             }
 
                             else
-
                                 adapter.notifyDataSetChanged();
 
+
+                            if (allposts.size()==0)
+                            {
+                                illuLay.setVisibility(View.VISIBLE);
+                                mRecyclerView.setVisibility(View.GONE);
+                            }
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -275,6 +288,7 @@ public class CoursMain extends Fragment {
                           /*  Intent intent = new Intent(view.getContext(), LoginActivity.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                             startActivity(intent);  */
+
 
                         }
                     }

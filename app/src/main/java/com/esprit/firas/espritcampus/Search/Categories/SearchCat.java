@@ -69,6 +69,7 @@ public class SearchCat extends Fragment {
     int offset = 0;
 
     private int i;
+    private TextView notice;
 
 
 
@@ -96,7 +97,7 @@ public class SearchCat extends Fragment {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
         progressBar = view.findViewById(R.id.progress_bar);
 
-
+        notice = view.findViewById(R.id.notice);
 
         progressBar.setVisibility(View.GONE);
 
@@ -268,6 +269,11 @@ public class SearchCat extends Fragment {
                             else
                                 adapter.notifyDataSetChanged();
 
+                            if (allcategories.size()==0)
+                            {
+                                notice.setVisibility(View.VISIBLE);
+                                mRecyclerView.setVisibility(View.GONE);
+                            }
 
                         } catch (JSONException e) {
                             e.printStackTrace();

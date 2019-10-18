@@ -1,5 +1,6 @@
 package com.esprit.firas.espritcampus.OtherUser;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import android.view.Window;
 import android.widget.TextView;
 
 import com.esprit.firas.espritcampus.R;
+import com.esprit.firas.espritcampus.Search.Users.SearchFollowers;
 
 
 public class DetailsUser extends DialogFragment {
@@ -94,6 +96,51 @@ public class DetailsUser extends DialogFragment {
         getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         this.getDialog().setTitle("Deatils");
+
+
+
+        if(Integer.valueOf(followers)>0) {
+            followersCard.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    Intent intent = new Intent(getContext(), SearchFollowers.class)
+                            .putExtra("url", "api/user/" + userId + "/followers");
+                    startActivity(intent);
+                }
+            });
+            followersText.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    Intent intent = new Intent(getContext(), SearchFollowers.class)
+                            .putExtra("url", "api/user/" + userId + "/followers");
+                    startActivity(intent);
+                }
+            });
+        }
+
+        if(Integer.valueOf(following)>0) {
+            followingCard.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getContext(), SearchFollowers.class)
+                            .putExtra("url", "api/user/" + userId + "/following");
+                    startActivity(intent);
+                }
+            });
+
+            followingText.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getContext(), SearchFollowers.class)
+                            .putExtra("url", "api/user/" + userId + "/following");
+                    startActivity(intent);
+                }
+            });
+        }
+
+
 
 
 

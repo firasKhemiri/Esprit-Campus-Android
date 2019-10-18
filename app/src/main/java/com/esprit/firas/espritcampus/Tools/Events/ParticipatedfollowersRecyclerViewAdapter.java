@@ -52,8 +52,8 @@ public class ParticipatedfollowersRecyclerViewAdapter extends RecyclerView.Adapt
                 .load(host +"/"+ feedItem.getProfile_pic()).dontAnimate()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .centerCrop()
-                .error(R.drawable.placeholder)
-                .placeholder(R.drawable.placeholder)
+                .error(R.drawable.user_avatar)
+                .placeholder(R.drawable.user_avatar)
                 .into(customViewHolder.imageView);
 
 

@@ -43,8 +43,6 @@
         </service>
 
 
-
-
         <activity android:name="com.esprit.firas.espritcampus.LoginActivity" />
 
         <activity android:name="com.esprit.firas.espritcampus.Profile.ProfileViewPager" />

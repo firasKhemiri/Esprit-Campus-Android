@@ -18,7 +18,9 @@ import android.support.design.widget.TextInputLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
+import android.text.TextUtils;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -29,14 +31,17 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.esprit.firas.espritcampus.R;
+import com.esprit.firas.espritcampus.Signup.SignupActivity2;
 import com.esprit.firas.espritcampus.Tools.Services;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.FileDescriptor;
 import java.io.IOException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
@@ -103,6 +108,7 @@ public class UpdateProfile extends AppCompatActivity {
         Intent i = getIntent();
 
         birthday.setText(i.getStringExtra("birthday"));
+
         firstname.setText(i.getStringExtra("first_name"));
         lastname.setText(i.getStringExtra("last_name"));
         email.setText(i.getStringExtra("email"));
@@ -142,22 +148,53 @@ public class UpdateProfile extends AppCompatActivity {
                 String name,nom,prenom,emaill,biog,phon,adr,birth;
 
                 if (firstname.getText().length() == 0)
-                    firstname.setError("Saisir votre prenom.");
+                    firstname.setError("Insérer votre prenom.");
                 else if (lastname.getText().length() == 0)
-                    lastname.setError("Saisir votre nom.");
-                else if (email.getText().length() == 0)
-                    email.setError("Saisir votre email.");
+                    lastname.setError("Insérer votre nom.");
+                else if (!isValidEmail(email.getText()))
+                    email.setError("Insérer un email valide.");
                 else if (birthday.getText().length() == 0)
-                    birthday.setError("Saisir votre date de naissance.");
+                    birthday.setError("Insérer votre date de naissance.");
 
                 else {
+
+
+                    myCalendar = Calendar.getInstance();
+
+                    date = new DatePickerDialog.OnDateSetListener() {
+
+                        @Override
+                        public void onDateSet(DatePicker view, int year, int monthOfYear,
+                                              int dayOfMonth) {
+                            // TODO Auto-generated method stub
+                            myCalendar.set(Calendar.YEAR, year);
+                            myCalendar.set(Calendar.MONTH, monthOfYear);
+                            myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                            updateLabel();
+                        }
+
+                    };
+
+                    birthday.setOnClickListener(new View.OnClickListener() {
+
+                        @Override
+                        public void onClick(View v) {
+                            // TODO Auto-generated method stub
+                            new DatePickerDialog(getApplicationContext(), date, myCalendar
+                                    .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                                    myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+                        }
+                    });
+
+                    birthday.setInputType(InputType.TYPE_NULL);
+
+
                     nom = String.valueOf(lastname.getText());
                     prenom = String.valueOf(firstname.getText());
                     emaill = String.valueOf(email.getText());
                     biog = String.valueOf(bio.getText());
                     phon = String.valueOf(phone.getText());
                     adr = String.valueOf(adresse.getText());
-                    birth = String.valueOf(birthday.getText());
 
 
                     Map<String,String> params = new HashMap<String, String>();
@@ -166,7 +203,7 @@ public class UpdateProfile extends AppCompatActivity {
                     params.put("email", emaill);
                     params.put("location", adr);
                     params.put("phone", phon);
-                    params.put("birthdate", birth);
+                    params.put("birthdate", birthday.getText().toString());
                     params.put("bio", biog);
 
 
@@ -174,6 +211,7 @@ public class UpdateProfile extends AppCompatActivity {
                 }
             }
         });
+
 
 
 
@@ -263,6 +301,11 @@ public class UpdateProfile extends AppCompatActivity {
         birthday.setText(sdf.format(myCalendar.getTime()));
     }
 
+    public boolean isValidEmail(CharSequence target) {
+        return (!TextUtils.isEmpty(target) && Patterns.EMAIL_ADDRESS.matcher(target).matches());
+    }
+
+
 
 
     @SuppressLint("HandlerLeak")
@@ -272,11 +315,11 @@ public class UpdateProfile extends AppCompatActivity {
             Log.i(TAG, "Handler " + msg.what);
             if (msg.what == 1) {
                 // txtStatus.setText("Upload Success");
-                Toast.makeText(getApplicationContext(),"Upload Success",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"Succés",Toast.LENGTH_LONG).show();
 
             } else {
                 //  txtStatus.setText("Upload Error");
-                Toast.makeText(getApplicationContext(),"Upload Error",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"Erreur",Toast.LENGTH_LONG).show();
             }
         }
 
@@ -296,7 +339,7 @@ public class UpdateProfile extends AppCompatActivity {
                 bmpp = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
 
                 int taille = (bmpp.getRowBytes() * bmpp.getHeight())/1024;
-                Toast.makeText(getApplicationContext()," "+taille,Toast.LENGTH_LONG).show();
+//                Toast.makeText(getApplicationContext()," "+taille,Toast.LENGTH_LONG).show();
                 Bitmap decoded ;
 
                 if(taille>=70000) {
@@ -376,7 +419,7 @@ public class UpdateProfile extends AppCompatActivity {
                 bmpc = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
 
                 int taille = (bmpc.getRowBytes() * bmpc.getHeight())/1024;
-                Toast.makeText(getApplicationContext()," "+taille,Toast.LENGTH_LONG).show();
+//                Toast.makeText(getApplicationContext()," "+taille,Toast.LENGTH_LONG).show();
                 Bitmap decoded ;
 
                 if(taille>=70000) {
@@ -467,6 +510,23 @@ public class UpdateProfile extends AppCompatActivity {
         return image;
     }
 
+    public String parseDate(String time) {
+        String inputPattern = "dd/MM/yyyy ";
+        String outputPattern = "yyyy-MM-dd";
+        SimpleDateFormat inputFormat = new SimpleDateFormat(inputPattern);
+        SimpleDateFormat outputFormat = new SimpleDateFormat(outputPattern);
+
+        Date date = null;
+        String str = null;
+
+        try {
+            date = inputFormat.parse(time);
+            str = outputFormat.format(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
 
 }
 

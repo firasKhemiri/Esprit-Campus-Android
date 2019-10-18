@@ -161,7 +161,7 @@ public class CommentsRecyclerViewAdapter extends RecyclerView.Adapter<CommentsRe
                             {
                                 //    Toast.makeText(mContext,"it's " +which,Toast.LENGTH_LONG).show();
 
-                                s.DeleteComment(comment.getId(),mContext);
+                                s.DeleteComment(commentItem.getId(),mContext);
 
 
                                 commentList.remove(getAdapterPosition());
@@ -191,7 +191,7 @@ public class CommentsRecyclerViewAdapter extends RecyclerView.Adapter<CommentsRe
 
                                   //              Toast.makeText(mContext,"it's " +String.valueOf(input.getText()),Toast.LENGTH_LONG).show();
                                                 String s = String.valueOf(input.getText());
-                                                new Services().UpdateComment(comment.getId(),s,mContext);
+                                                new Services().UpdateComment(commentItem.getId(),s,mContext);
                                                 commentItem.setComment(s);
                                                 notifyDataSetChanged();
                                             }

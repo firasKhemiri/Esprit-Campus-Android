@@ -148,7 +148,7 @@ public class UpdatePhotoActual extends Activity implements CategoryDialog.OnComp
                 FragmentManager fm = getFragmentManager();
 
                 Bundle catargs = new Bundle();
-                catargs.putString("url", "/api/categories_event/");
+                catargs.putString("url", "/api/categories/");
                 CategoryDialog catfragment = new CategoryDialog();
                 catfragment.setArguments(catargs);
                 catfragment.show(fm,"abc");
@@ -178,7 +178,7 @@ public class UpdatePhotoActual extends Activity implements CategoryDialog.OnComp
             Log.i(TAG, "Handler " + msg.what);
             if (msg.what == 1) {
                // txtStatus.setText("Upload Success");
-                Toast.makeText(getApplicationContext(),"Upload Success",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"Succés",Toast.LENGTH_LONG).show();
 
                 Intent i = new Intent(getApplicationContext(), AccueilActivity.class);
                 i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -187,7 +187,7 @@ public class UpdatePhotoActual extends Activity implements CategoryDialog.OnComp
 
             } else {
               //  txtStatus.setText("Upload Error");
-                Toast.makeText(getApplicationContext(),"Upload Error",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"Erreur",Toast.LENGTH_LONG).show();
             }
         }
 
@@ -251,7 +251,7 @@ public class UpdatePhotoActual extends Activity implements CategoryDialog.OnComp
 
               //  int taille = bitmap.getByteCount()/1024;
                // int taille = (bitmap.getRowBytes() * bitmap.getHeight())/1024;
-                Toast.makeText(getApplicationContext()," "+taille,Toast.LENGTH_LONG).show();
+//                Toast.makeText(getApplicationContext()," "+taille,Toast.LENGTH_LONG).show();
 
 
                 if(taille>=7000) {
@@ -259,7 +259,7 @@ public class UpdatePhotoActual extends Activity implements CategoryDialog.OnComp
                     decoded = BitmapFactory.decodeStream(new ByteArrayInputStream(out.toByteArray()));
 
                     imageView.setImageBitmap(decoded);
-                    Toast.makeText(getApplicationContext()," 1 "+taille,Toast.LENGTH_LONG).show();
+//                    Toast.makeText(getApplicationContext()," 1 "+taille,Toast.LENGTH_LONG).show();
 
                 }
 
@@ -268,7 +268,7 @@ public class UpdatePhotoActual extends Activity implements CategoryDialog.OnComp
                     decoded = BitmapFactory.decodeStream(new ByteArrayInputStream(out.toByteArray()));
 
                     imageView.setImageBitmap(decoded);
-                    Toast.makeText(getApplicationContext()," 1 "+taille,Toast.LENGTH_LONG).show();
+//                    Toast.makeText(getApplicationContext()," 1 "+taille,Toast.LENGTH_LONG).show();
 
                 }
 
@@ -277,7 +277,7 @@ public class UpdatePhotoActual extends Activity implements CategoryDialog.OnComp
                     decoded = BitmapFactory.decodeStream(new ByteArrayInputStream(out.toByteArray()));
 
                     imageView.setImageBitmap(decoded);
-                    Toast.makeText(getApplicationContext()," 2 "+taille,Toast.LENGTH_LONG).show();
+//                    Toast.makeText(getApplicationContext()," 2 "+taille,Toast.LENGTH_LONG).show();
 
                 }
 
@@ -286,7 +286,7 @@ public class UpdatePhotoActual extends Activity implements CategoryDialog.OnComp
                     decoded = BitmapFactory.decodeStream(new ByteArrayInputStream(out.toByteArray()));
 
                     imageView.setImageBitmap(decoded);
-                    Toast.makeText(getApplicationContext()," 3 "+taille,Toast.LENGTH_LONG).show();
+//                    Toast.makeText(getApplicationContext()," 3 "+taille,Toast.LENGTH_LONG).show();
                 }
 
 
@@ -295,7 +295,7 @@ public class UpdatePhotoActual extends Activity implements CategoryDialog.OnComp
                     decoded = BitmapFactory.decodeStream(new ByteArrayInputStream(out.toByteArray()));
 
                     imageView.setImageBitmap(decoded);
-                       Toast.makeText(getApplicationContext()," 4 "+taille,Toast.LENGTH_LONG).show();
+//                       Toast.makeText(getApplicationContext()," 4 "+taille,Toast.LENGTH_LONG).show();
 
                 }
 
@@ -305,7 +305,7 @@ public class UpdatePhotoActual extends Activity implements CategoryDialog.OnComp
                     decoded = BitmapFactory.decodeStream(new ByteArrayInputStream(out.toByteArray()));
 
                     imageView.setImageBitmap(decoded);
-                    Toast.makeText(getApplicationContext()," 5 "+taille,Toast.LENGTH_LONG).show();
+//                    Toast.makeText(getApplicationContext()," 5 "+taille,Toast.LENGTH_LONG).show();
 
                 }
 
@@ -315,7 +315,7 @@ public class UpdatePhotoActual extends Activity implements CategoryDialog.OnComp
                     decoded = BitmapFactory.decodeStream(new ByteArrayInputStream(out.toByteArray()));
 
                     imageView.setImageBitmap(decoded);
-                       Toast.makeText(getApplicationContext()," 6 "+taille,Toast.LENGTH_LONG).show();
+//                       Toast.makeText(getApplicationContext()," 6 "+taille,Toast.LENGTH_LONG).show();
 
                 }
 
@@ -325,7 +325,7 @@ public class UpdatePhotoActual extends Activity implements CategoryDialog.OnComp
                     decoded = BitmapFactory.decodeStream(new ByteArrayInputStream(out.toByteArray()));
 
                     imageView.setImageBitmap(decoded);
-                       Toast.makeText(getApplicationContext()," 7 "+taille,Toast.LENGTH_LONG).show();
+//                       Toast.makeText(getApplicationContext()," 7 "+taille,Toast.LENGTH_LONG).show();
 
                 }
 
@@ -335,7 +335,7 @@ public class UpdatePhotoActual extends Activity implements CategoryDialog.OnComp
                     decoded = BitmapFactory.decodeStream(new ByteArrayInputStream(out.toByteArray()));
 
                     imageView.setImageBitmap(decoded);
-                    Toast.makeText(getApplicationContext()," 5 "+taille,Toast.LENGTH_LONG).show();
+//                    Toast.makeText(getApplicationContext()," 5 "+taille,Toast.LENGTH_LONG).show();
 
                 }
 

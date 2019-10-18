@@ -17,6 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_centerInParent="true"
+            android:visibility="visible"
             />
 
 
@@ -27,6 +28,37 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"/>
+
+
+    <RelativeLayout
+        android:id="@+id/illu_lay"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/illu"
+            android:layout_width="wrap_content"
+            android:layout_height="270dp"
+
+            android:layout_marginTop="40dp"
+            android:src="@drawable/testillustration_center" />
+
+        <TextView
+            android:id="@+id/illu_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/illu"
+
+            android:layout_marginTop="-25dp"
+            android:layout_centerHorizontal="true"
+            android:text="Pas de publications à afficher"
+            android:textSize="23sp"
+            android:textStyle="bold|italic"
+            android:textColor="#919B9C"/>
+
+    </RelativeLayout>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/add_notif"

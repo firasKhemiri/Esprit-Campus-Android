@@ -112,11 +112,11 @@ public class SignupActivity2 extends AppCompatActivity {
 
 
                 if (lsname.getText().length() == 0)
-                    lsname.setError("Saisir un nom.");
+                    lsname.setError("Insérer un nom.");
                 else if (fsname.getText().length() == 0)
-                    fsname.setError("Saisir un prenom.");
+                    fsname.setError("Insérer un prenom.");
                 else if (datenaiss.getText().length() == 0)
-                    datenaiss.setError("Saisir votre date de naissance.");
+                    datenaiss.setError("Insérer votre date de naissance.");
 
 
 

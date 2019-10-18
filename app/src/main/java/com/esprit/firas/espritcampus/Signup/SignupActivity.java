@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -80,11 +82,11 @@ public class SignupActivity extends AppCompatActivity {
 
 
                 if (etUsername.getText().length() == 0)
-                    etUsername.setError("Saisir un login.");
-                else if (etPassword.getText().length() == 0)
-                    etUsername.setError("Saisir un mot de passe.");
-                else if (etEmail.getText().length() == 0)
-                    etUsername.setError("Saisir un mot de passe.");
+                    etUsername.setError("Insérer un login.");
+                else if (!isValidEmail(etEmail.getText()))
+                    etEmail.setError("Insérer un email valide.");
+                else if (etPassword.getText().length() <= 8)
+                    etPassword.setError("Insérer un mot de passe valide.");
 
                 else{
                     Intent intent = new Intent(getApplicationContext(), SignupActivity2.class)
@@ -95,8 +97,6 @@ public class SignupActivity extends AppCompatActivity {
                 }
             }
         });
-
-
 
 
     /*    com.kosalgeek.asynctask.AsyncResponse as = new com.kosalgeek.asynctask.AsyncResponse() {
@@ -154,6 +154,12 @@ public class SignupActivity extends AppCompatActivity {
         callbackManager.onActivityResult(requestCode,
                 resultCode, data);
     }
+
+
+    public boolean isValidEmail(CharSequence target) {
+        return (!TextUtils.isEmpty(target) && Patterns.EMAIL_ADDRESS.matcher(target).matches());
+    }
+
 
 
 

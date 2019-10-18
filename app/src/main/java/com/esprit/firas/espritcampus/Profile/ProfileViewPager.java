@@ -35,7 +35,12 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.esprit.firas.espritcampus.Accueil.AccueilActivity;
+import com.esprit.firas.espritcampus.OtherUser.DetailsUser;
+import com.esprit.firas.espritcampus.OtherUser.UserViewPager;
 import com.esprit.firas.espritcampus.R;
+import com.esprit.firas.espritcampus.Tools.AddData.AddCours;
+import com.esprit.firas.espritcampus.Tools.AddData.AddStuffMain;
 import com.esprit.firas.espritcampus.Tools.Courses.CoursMain;
 import com.esprit.firas.espritcampus.Tools.Feed.PostsMainNoSqLite;
 
@@ -85,6 +90,7 @@ public class ProfileViewPager extends AppCompatActivity implements AppBarLayout.
 
         name = findViewById(R.id.username);
         bio = findViewById(R.id.bio);
+        ImageButton add = findViewById(R.id.add);
 
 
       /*  followers = findViewById(R.id.followers);
@@ -143,6 +149,49 @@ public class ProfileViewPager extends AppCompatActivity implements AppBarLayout.
                 finish();
             }
         });
+
+
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                CharSequence types[] = new CharSequence[] {"publication", "evenement", "document"};
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(ProfileViewPager.this);
+                builder.setTitle("Choisir type:");
+                builder.setItems(types, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // the user clicked on types[which]
+
+                        if (which ==0 )
+                        {
+                            Intent i = new Intent(getApplicationContext(), AddStuffMain.class);
+                            i.putExtra("pos",0);
+                            startActivity(i);
+                        }
+
+                        if (which ==1 )
+                        {
+                            Intent i = new Intent(getApplicationContext(), AddStuffMain.class);
+                            i.putExtra("pos",1);
+                            startActivity(i);
+                        }
+
+                        if (which ==2 )
+                        {
+                            Intent i = new Intent(getApplicationContext(), AddCours.class);
+                            startActivity(i);
+                        }
+
+                    }
+                });
+                builder.show();
+
+
+            }
+        });
+
 
     }
 
@@ -282,8 +331,8 @@ public class ProfileViewPager extends AppCompatActivity implements AppBarLayout.
                                 final String phone = menuObject.getString("phone");
 
 
-                                String followingUser = menuObject.getString("followers_count");
-                                String userFollowing = menuObject.getString("following_count");
+                                final String followingUser = menuObject.getString("followers_count");
+                                final String userFollowing = menuObject.getString("following_count");
 
                                 String classe = menuObject.getString("classe");
 
@@ -375,18 +424,26 @@ public class ProfileViewPager extends AppCompatActivity implements AppBarLayout.
 
                                                 if (which == 0) {
 
-                                                    Intent i = new Intent(getApplicationContext(),UpdateProfile.class);
-                                                    i.putExtra("username",username);
-                                                    i.putExtra("first_name",first_name);
-                                                    i.putExtra("last_name",last_name);
-                                                    i.putExtra("email",email);
-                                                    i.putExtra("bio",prof_bio);
-                                                    i.putExtra("photoprof",pic_url);
-                                                    i.putExtra("photocouv",cover_pic);
-                                                    i.putExtra("birthday",birthday);
-                                                    i.putExtra("phone",phone);
+                                                    android.support.v4.app.FragmentManager fm = ProfileViewPager.this.getSupportFragmentManager();
+                                                    DetailsUser userDialogFragment = new DetailsUser();
 
-                                                    startActivity(i);
+                                                    Bundle args = new Bundle();
+
+
+                                                    args.putString("location",location);
+                                                    args.putString("following",userFollowing);
+                                                    args.putString("followers", followingUser);
+                                                    args.putString("classe", classe_name);
+                                                    args.putString("birthday", birthday);
+                                                    args.putBoolean("isProfessor", false);
+                                                    args.putInt("user_id", id);
+                                                    //   dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                                                    userDialogFragment.setArguments(args);
+
+                                                    userDialogFragment.show(fm, null);
+
+
+
 
                                                 } else if (which == 1) {
 
